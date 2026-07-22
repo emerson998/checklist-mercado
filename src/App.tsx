@@ -19,7 +19,7 @@ export default function App() {
   const [nomeUsuario, setNomeUsuario] = useNomeUsuario();
   const [editandoNome, setEditandoNome] = useState(false);
 
-  const titulo = nomeUsuario ? `Compras da ${nomeUsuario}` : "Lista de Compras";
+  const titulo = nomeUsuario ? `Compras ${nomeUsuario}` : "Lista de Compras";
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
