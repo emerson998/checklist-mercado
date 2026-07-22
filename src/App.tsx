@@ -4,7 +4,7 @@ import { CarrinhoView } from "./components/CarrinhoView";
 import { HistoricoView } from "./components/HistoricoView";
 import { GastosView } from "./components/GastosView";
 import { LoginButton } from "./components/LoginButton";
-import { BackupCsv } from "./components/BackupCsv";
+import { BackupView } from "./components/BackupView";
 import { NomeUsuarioModal } from "./components/NomeUsuarioModal";
 import { useCompras } from "./hooks/useCompras";
 import { useAuth } from "./hooks/useAuth";
@@ -33,11 +33,6 @@ export default function App() {
             🛒 {titulo}
           </button>
           <div className="flex items-center gap-4">
-            <BackupCsv
-              historico={compras.historico}
-              onMesclar={compras.mesclarHistorico}
-              onSubstituir={compras.substituirHistorico}
-            />
             <LoginButton user={user} onEntrar={entrarCom} onSair={sair} />
             <button
               onClick={toggleTheme}
@@ -67,6 +62,13 @@ export default function App() {
         )}
         {aba === "historico" && <HistoricoView historico={compras.historico} />}
         {aba === "gastos" && <GastosView historico={compras.historico} theme={theme} />}
+        {aba === "backup" && (
+          <BackupView
+            historico={compras.historico}
+            onMesclar={compras.mesclarHistorico}
+            onSubstituir={compras.substituirHistorico}
+          />
+        )}
       </main>
 
       <div className="md:hidden">

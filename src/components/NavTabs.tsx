@@ -1,9 +1,10 @@
-export type Aba = "carrinho" | "historico" | "gastos";
+export type Aba = "carrinho" | "historico" | "gastos" | "backup";
 
 const ABAS: { id: Aba; label: string; icon: string }[] = [
   { id: "carrinho", label: "Carrinho", icon: "🛒" },
   { id: "historico", label: "Histórico", icon: "🧾" },
   { id: "gastos", label: "Gastos", icon: "📊" },
+  { id: "backup", label: "Backup", icon: "💾" },
 ];
 
 interface NavTabsProps {
